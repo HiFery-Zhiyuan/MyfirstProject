@@ -1,0 +1,38 @@
+-> pip list
+-> pip show pandapower
+-> hasattr(obj, attri)                                  判断是否有‘attri’属性
+-> np.array.shape                                       得到ndarray的维度参数
+-> np.isnan(data_matrix).any()                          判断是否存在有nan
+-> a[np.isnan(a)] = 0                                   设置nan为0
+-> np.random.permutation(data_order)                    不打乱原数据顺序
+-> data_shfl[1,:].tolist() in data_order.tolist()       校验shfl数据是否在原数据集(验证 purpose)
+-> df_DTL1.dtype 来判断 df_DTL的类型；dtype=（‘O’）表示为综合类型的数据，只有float类型才能 使用 df_DTL1.round(3)
+-> np.astype(int)                                           改变为int形式
+-> import matplotlib
+-> matplotlib.use('TkAgg')                减少 plt.plot()报错问题 不一定可用
+-> data.sum(axis = 0) 按列求和
+-> win+R：dxdiag 查询windows系统信息
+-> https://www.youtube.com/watch?v=VEDy-c5Sk8Y&ab_channel=JeffHeaton install pytorch on Mac OS m1/m2
+
+-> ppc['branch'].shape                              得到ndarray的维度参数
+
+-> ##ChatGPT_input
+# --------------------  initialize the parameters with a matrix  in PYOMO --------------
+
+# create a 2x3 matrix of values
+values = np.array([[1, 2, 3], [4, 5, 6]])
+
+# create a Pyomo model
+model = ConcreteModel()
+
+# define a parameter with the same shape as the matrix
+model.param = Param(range(2), range(3),mutable=True)
+
+# initialize the parameter with the matrix values
+for i in range(2):
+    for j in range(3):
+        model.param[i,j] = values[i,j]
+
+# --------------------------------------------------------------------------------------
+
+-> model.power_balance_constraints.pprint()      展示constrain
